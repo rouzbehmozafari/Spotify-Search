@@ -7,10 +7,17 @@
     <title>results</title>
 </head>
 <body>
-    <ul class="results">
+    <a href="#" class="results">
         <% items.forEach((article)=> { %>
             <li>
-                <img src="<%= article.href %>" alt="img" width="50px">
+                <img 
+                src=
+                 <% if(article.images.length > 0){ %>
+                    "<%= article.images[0].url %>"
+                    <% } else { %>
+                    "https://www.pinclipart.com/picdir/middle/111-1113792_narcotic-sound-astound-singer-logo-clipart.png"
+                    <% } %> 
+                 alt="img" width="50px">
 
                 <h3>
                     <%= article.name %>

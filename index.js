@@ -1,6 +1,5 @@
 const dotenv = require('dotenv')
 const express = require('express')
-const bodyParser = require('body-parser')
 
 dotenv.config()
 var SpotifyWebApi = require('spotify-web-api-node');
@@ -23,8 +22,6 @@ app.use((req,_,next)=>{
 })
 app.use(express.static('public'))
 app.set('view engine', 'ejs');
-app.use(express.json())
-app.use(bodyParser.urlencoded({ extended: false }))
 app.get('/',(req,res)=>{
     res.render(__dirname+'/views/pages/home.ejs',{})
 })
